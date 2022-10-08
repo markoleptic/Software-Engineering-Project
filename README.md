@@ -89,3 +89,5 @@
   - AuthProvider: I think this is here so that the entire application is considered "children" and thus has access to it
   - Routes: because every individual Route has to be wrapped with this
 
+## References
+https://github.com/gitdagray/react_persist_login/tree/8d489823df307bdecdbdc10dcb79d0c748ca1fca/public
