@@ -91,15 +91,15 @@
 
 ## References
 
-Backend: 
-https://github.com/gitdagray/express_jwt
+Backend:   
+https://github.com/gitdagray/express_jwt  
 https://youtu.be/favjC6EKFgw
 
-Frontend:
-https://github.com/gitdagray/react_persist_login/tree/8d489823df307bdecdbdc10dcb79d0c748ca1fca/public
-https://youtu.be/brcHK3P6ChQ
-https://youtu.be/X3qyxo_UTR4
-https://youtu.be/oUZjO00NkhY
-https://youtu.be/nI8PYZNFtac
-https://youtu.be/27KeYk-5vJw
+Frontend:  
+https://github.com/gitdagray/react_persist_login/tree/8d489823df307bdecdbdc10dcb79d0c748ca1fca/public  
+https://youtu.be/brcHK3P6ChQ  
+https://youtu.be/X3qyxo_UTR4  
+https://youtu.be/oUZjO00NkhY  
+https://youtu.be/nI8PYZNFtac  
+https://youtu.be/27KeYk-5vJw  
 
