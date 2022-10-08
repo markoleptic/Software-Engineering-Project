@@ -3,7 +3,13 @@ import { useEffect } from "react";
 import useRefreshToken from "./useRefreshToken";
 import { useAuthContext } from "../context/AuthProvider";
 
-// interceptors to refresh access token before requests automatically
+/**
+ * NOT BEING USED
+ * NOT BEING USED
+ * NOT BEING USED
+ */
+
+//interceptors to refresh access token before requests, automatically
 const useAxiosPrivate = () => {
     const refresh = useRefreshToken();
     const { auth } = useAuthContext();
