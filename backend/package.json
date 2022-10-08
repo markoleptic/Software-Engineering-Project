@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "CS3203 Project",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "aws-sdk": "^2.1227.0",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0",
+    "sequelize": "^6.23.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
