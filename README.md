@@ -89,3 +89,17 @@
   - AuthProvider: I think this is here so that the entire application is considered "children" and thus has access to it
   - Routes: because every individual Route has to be wrapped with this
 
+## References
+
+Backend:   
+https://github.com/gitdagray/express_jwt  
+https://youtu.be/favjC6EKFgw
+
+Frontend:  
+https://github.com/gitdagray/react_persist_login/
+https://youtu.be/brcHK3P6ChQ  
+https://youtu.be/X3qyxo_UTR4  
+https://youtu.be/oUZjO00NkhY  
+https://youtu.be/nI8PYZNFtac  
+https://youtu.be/27KeYk-5vJw  
+
