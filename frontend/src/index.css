@@ -140,28 +140,53 @@ nav ul li a.icon-link-item:hover {
 }
 
 .form-container {
-    width: min(90%, 1000px);
-    max-width: 420px;
-    min-height: 400px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
+  width: min(90%, 1000px);
+  max-width: 420px;
+  min-height: 400px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.rec-container {
+  max-width: 420px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  padding-bottom: 1rem;
+}
+.rec-container h3 {
+  color: rgba(62, 198, 235, 1);
+  width: 100%;
+  font-size: 24px;
+  max-height: 100px;
+  text-align: center;
+}
+.rec-container h4 {
+  width: 100%;
+  font-size: 16px;
+  max-height: 100px;
+  padding-top: 0.5rem;
+}
+.rec-select-item {
+  color:#02132b;
+  font-size: 16px;
+}
 
 .form-container h1 {
-    text-align: center;
+  text-align: center;
 }
-
 .form-container p {
-    text-align: center;
+  text-align: center;
 }
 div.form-container p .text-link:hover {
-    text-shadow: 0 0 8px #3ec6eb;
+  text-shadow: 0 0 8px #3ec6eb;
 }
-
 form {
   display: flex;
   flex-direction: column;
@@ -180,8 +205,6 @@ textarea {
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
-
-
 
 label,
 button {
