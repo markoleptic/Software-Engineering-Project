@@ -11,7 +11,7 @@ const PersistCheck = () => {
   const refresh = useRefreshToken();
   // get current auth and persist values from nearest context
   const { auth, persist } = useAuthContext();
-  
+
   useEffect(() => {
     let isMounted = true;
     const verifyRefreshToken = async () => {
@@ -19,9 +19,8 @@ const PersistCheck = () => {
         await refresh();
       } catch (err) {
         if (err.response?.status === 401) {
-          console.log('No refresh token')
-        }
-        else {
+          console.log("No refresh token");
+        } else {
           console.error(err);
         }
       } finally {
@@ -34,11 +33,10 @@ const PersistCheck = () => {
     } else {
       setIsLoading(false);
     }
-    return () => isMounted = false;
+    return () => (isMounted = false);
   }, [auth.accessToken, persist, refresh]);
 
-  useEffect(() => {
-  },[isLoading])
+  useEffect(() => {}, [isLoading]);
 
   return (
     <>
