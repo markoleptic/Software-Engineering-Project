@@ -284,8 +284,21 @@ li {
 }
 
 div.email-conf {
+  padding-top: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+div.profile {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+button.sign-out {
+  margin: auto;
 }
