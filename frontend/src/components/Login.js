@@ -17,7 +17,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [checked, setChecked] = useState("");
+  const [checked, setChecked] = useState(false);
 
   // sets the userRef to what the user is currently focusing
   useEffect(() => {
@@ -50,7 +50,7 @@ const Login = () => {
         setUsername("");
         setEmail("");
         setPassword("");
-        navigate('/profile');
+        navigate(`/profile/${username}`);
       }
     } catch (err) {
       if (!err?.response) {

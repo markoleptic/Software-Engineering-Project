@@ -260,6 +260,14 @@ li {
   margin-bottom: 0.5rem;
 }
 
+.checkEmailMsg {
+  background-color: #3ec6eb;
+  color: black;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
 .line {
   display: inline-block;
 }
@@ -269,4 +277,15 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+}
+
+.conf-result {
+  text-align: center;
+}
+
+div.email-conf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }

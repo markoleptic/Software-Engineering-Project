@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import AuthCheck from "./components/AuthCheck";
 import PersistCheck from "./components/PersistCheck";
+import EmailConfirmation from "./components/EmailConfirmation";
 
 function App() {
   return (
@@ -23,12 +24,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/recs" element={<Recs />} />
-
+        <Route path="/confirmation/:token" element={<EmailConfirmation />} />
         <Route element={<PersistCheck />}>
           <Route element={<AuthCheck />}>
             {/* protected routes */}
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:id" element={<Profile />} />
           </Route>
         </Route>
         {/* anything that isn't one of the above */}
