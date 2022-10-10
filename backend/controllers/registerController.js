@@ -24,7 +24,7 @@ const sendConfEmail = async (user, emailToken) => {
     .sendMail({
       from: "support@beatshot.gg",
       to: `${user.email}`,
-      subject: "BeatShot - Email Confirmation",
+      subject: "AniFind - Email Confirmation",
       html: `Please click <a href="${url}">this link</a> to confirm your email.`,
     })
     .then(function (info) {
