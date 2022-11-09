@@ -76,6 +76,7 @@ const SelectBox = ({className, id}) => {
   // load options using API call
   const loadOptions = async (inputValue) => {
     try {
+      console.log(inputValue);
       const response = await axios.get(`/api/animelist/${inputValue}`, {
         headers: { "Content-Type": "application/json" }
       });
@@ -85,6 +86,7 @@ const SelectBox = ({className, id}) => {
             arr.push({value: response.data[obj].name,
                 label:  response.data[obj].name})
         }
+        console.log(arr.length)
         return arr;
       }
     } catch (err) {
