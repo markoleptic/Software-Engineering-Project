@@ -33,7 +33,7 @@ const Register = () => {
   const [validPasswordMatch, setValidPasswordMatch] = useState(false);
   const [passwordMatchFocus, setPasswordMatchFocus] = useState(false);
 
-  const [checkEmailMsg, setCheckEmailMsg] =  useState('');
+  const [checkEmailMsg, setCheckEmailMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
   // sets the userRef to what the user is currently focusing
@@ -94,7 +94,7 @@ const Register = () => {
         setPassword("");
         setEmail("");
         setPasswordMatch("");
-        setCheckEmailMsg("Email sent! Please check your inbox.")
+        setCheckEmailMsg("Email sent! Please check your inbox.");
       }
     } catch (err) {
       if (!err?.response) {
@@ -113,17 +113,12 @@ const Register = () => {
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
-        aria-live="assertive"
-      >
+        aria-live="assertive">
         {errMsg}
       </p>
 
-      {checkEmailMsg !== '' &&
-      <p className="checkEmailMsg">
-        {checkEmailMsg}
-      </p>
-      }
-      
+      {checkEmailMsg !== "" && <p className="checkEmailMsg">{checkEmailMsg}</p>}
+
       <h1>Register</h1>
 
       <form onSubmit={handleRegister}>
@@ -156,8 +151,7 @@ const Register = () => {
             usernameFocus && username && !validUsername
               ? "instructions"
               : "offscreen"
-          }
-        >
+          }>
           <FontAwesomeIcon icon={faInfoCircle} />
           4 to 24 characters. <br />
         </p>
@@ -189,8 +183,7 @@ const Register = () => {
           id="emailnote"
           className={
             emailFocus && email && !validEmail ? "instructions" : "offscreen"
-          }
-        >
+          }>
           <FontAwesomeIcon icon={faInfoCircle} />
           Must be a valid email. <br />
         </p>
@@ -221,8 +214,7 @@ const Register = () => {
           id="pwdnote"
           className={
             passwordFocus && !validPassword ? "instructions" : "offscreen"
-          }
-        >
+          }>
           <FontAwesomeIcon icon={faInfoCircle} />
           8 to 24 characters.
           <br />
@@ -259,8 +251,7 @@ const Register = () => {
             passwordMatchFocus && !validPasswordMatch
               ? "instructions"
               : "offscreen"
-          }
-        >
+          }>
           <FontAwesomeIcon icon={faInfoCircle} />
           Must match the first password input field.
         </p>
@@ -273,8 +264,7 @@ const Register = () => {
             !validPasswordMatch
               ? true
               : false
-          }
-        >
+          }>
           Sign Up
         </button>
       </form>

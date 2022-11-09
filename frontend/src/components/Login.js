@@ -72,15 +72,14 @@ const Login = () => {
     setChecked(!checked);
     setPersist(!checked);
     localStorage.setItem("persist", !checked);
-  }
+  };
 
   return (
     <div className="form-container">
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
-        aria-live="assertive"
-      >
+        aria-live="assertive">
         {errMsg}
       </p>
 

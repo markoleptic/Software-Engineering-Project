@@ -7,8 +7,7 @@ const Recs = () => {
         <h3>Choose up to 5 of your favorite anime:</h3>
         <div className="rec-select">
           <div>
-            
-          <h4> #1:</h4>
+            <h4> #1:</h4>
             <SelectBox className="rec-select-item" />
           </div>
 
@@ -32,7 +31,7 @@ const Recs = () => {
             <SelectBox className="rec-select-item" />
           </div>
         </div>
-        <button >Get Recommendations</button>
+        <button>Get Recommendations</button>
       </div>
     </>
   );

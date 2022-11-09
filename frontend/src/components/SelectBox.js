@@ -58,42 +58,42 @@ export const coloredSelectStyles = () => ({
   }),
 });
 
-const SelectBox = ({className, id}) => {
-
+const SelectBox = ({ className, id }) => {
   // eslint-disable-next-line no-unused-vars
   const [inputValue, setValue] = useState("");
-    // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars
   const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleInputChange = value => {
+  const handleInputChange = (value) => {
     setValue(value);
   };
 
-  const handleChange = value => {
+  const handleChange = (value) => {
     setSelectedValue(value);
-  }
+  };
 
   // load options using API call
   const loadOptions = async (inputValue) => {
     try {
       console.log(inputValue);
       const response = await axios.get(`/api/animelist/${inputValue}`, {
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       });
       if (response) {
-        var arr=[];
+        var arr = [];
         for (var obj in response.data) {
-            arr.push({value: response.data[obj].name,
-                label:  response.data[obj].name})
+          arr.push({
+            value: response.data[obj].name,
+            label: response.data[obj].name,
+          });
         }
-        console.log(arr.length)
+        console.log(arr.length);
         return arr;
       }
     } catch (err) {
       console.log(err);
     }
   };
-
   return (
     <>
       <AsyncSelect
