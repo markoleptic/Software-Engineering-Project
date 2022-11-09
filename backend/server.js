@@ -21,6 +21,7 @@ app.use(cookieParser());
 // all routes that don't require being logged in
 app.use("/api/login", require("./routes/login"));
 app.use("/api/recs", require("./routes/recs"));
+app.use("/api/animelist", require("./routes/animelist"));
 app.use("/api/register", require("./routes/register"));
 app.use("/api/confirmation", require("./routes/confirmation"));
 app.use("/api/refresh", require("./routes/refresh"));
