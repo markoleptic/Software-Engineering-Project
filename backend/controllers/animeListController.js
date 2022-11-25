@@ -5,7 +5,7 @@ const { anime } = require("../models");
 const returnAnimeList = async (req, res) => {
   const contains = req.params.contains;
   const animeList = await anime.findAll({
-    attributes: ["name"],
+    attributes: ["name","anime_id"],
     raw: true,
     where: {
       name: {
@@ -18,7 +18,7 @@ const returnAnimeList = async (req, res) => {
 
 const returnEntireAnimeList = async (req, res) => {
   const animeList = await anime.findAll({
-    attributes: ["name"],
+    attributes: ["name","anime_id"],
     raw: true,
     where: {
       [Op.or]: [

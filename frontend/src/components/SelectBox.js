@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "../api/axios";
 import AsyncSelect from "react-select/async";
 
+export const userAnime = [];
 export const coloredSelectStyles = () => ({
   menu: (provided) => {
     return {
@@ -70,6 +71,18 @@ const SelectBox = ({ className, id }) => {
 
   const handleChange = (value) => {
     setSelectedValue(value);
+    if (id === 0) {
+      userAnime[0] = value.value;
+    } else if (id === 1) {
+      userAnime[1] = value.value;
+    } else if (id === 2) {
+      userAnime[2] = value.value;
+    } else if (id === 3) {
+      userAnime[3] = value.value;
+    } else if (id === 4) {
+      userAnime[4] = value.value;
+    }
+    console.log(userAnime);
   };
 
   // load options using API call
@@ -83,7 +96,7 @@ const SelectBox = ({ className, id }) => {
         var arr = [];
         for (var obj in response.data) {
           arr.push({
-            value: response.data[obj].name,
+            value: response.data[obj].anime_id,
             label: response.data[obj].name,
           });
         }
