@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('userselected', {
+  return sequelize.define('userwatched', {
     userID: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
   }
 }, {
     sequelize,
-    tableName: 'userselected',
+    tableName: 'userwatched',
     timestamps: false,
   });
 };

@@ -1,4 +1,4 @@
-const { userselected } = require("../models");
+const { userwatched, sequelize } = require("../models");
 const { users } = require("../models");
 
 const handleRecs = async (req, res) => {
@@ -12,19 +12,22 @@ const handleRecs = async (req, res) => {
     },
   });
   for (let anime in userAnime) {
-    const foundAnime = await userselected.findOne({
+    const foundAnime = await userwatched.findOne({
       where: {
         userID: userID.userID,
         anime_id: userAnime[anime],
       },
     });
     if (foundAnime === null) {
-      userselected.create({
+        userwatched.create({
         userID: userID.userID,
         anime_id: userAnime[anime],
       });
     }
   }
+  const result = await sequelize.query("call loginsystem.getRec(1)");
+  res.json(result);
+  console.log(result);
 };
 
 module.exports = { handleRecs };

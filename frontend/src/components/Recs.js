@@ -2,9 +2,11 @@ import SelectBox from "./SelectBox";
 import axios from "../api/axios";
 import { userAnime } from "./SelectBox";
 import { useAuthContext } from "../context/AuthProvider";
+import { useState } from "react";
 
 const Recs = () => {
   const { auth } = useAuthContext();
+  const [recs, setRecs] = useState([]);
   const getRecs = async (e) => {
     // prevents default behavior of reloading the page
     e.preventDefault();
@@ -20,7 +22,10 @@ const Recs = () => {
       );
       //clear the form if no errors have been caught
       if (response) {
-        console.log(response);
+        const data = response.data;
+        for (let anime in data) {
+          setRecs(data[anime].name)
+        }
       }
     } catch (err) {
       if (!err?.response) {
@@ -59,6 +64,7 @@ const Recs = () => {
             <SelectBox className="rec-select-item" id={4} />
           </div>
         </div>
+        <p>{recs}</p>
         <button onClick={getRecs}>Get Recommendations</button>
       </div>
     </>
