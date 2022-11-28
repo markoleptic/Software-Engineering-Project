@@ -45,12 +45,13 @@ const Login = () => {
       );
       //clear the form if no errors have been caught
       if (response) {
+        const responseUsername = response.data.username;
         const accessToken = response.data?.accessToken;
-        setAuth({ username, accessToken });
+        setAuth({ username: responseUsername, accessToken });
+        navigate(`/profile/${responseUsername}`);
         setUsername("");
         setEmail("");
         setPassword("");
-        navigate(`/profile/${username}`);
       }
     } catch (err) {
       if (!err?.response) {

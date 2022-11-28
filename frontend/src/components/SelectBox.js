@@ -82,8 +82,17 @@ const SelectBox = ({ className, id }) => {
     } else if (id === 4) {
       userAnime[4] = value.value;
     }
-    console.log(userAnime);
   };
+
+  function compare( a, b ) {
+    if ( a.label < b.label ){
+      return -1;
+    }
+    if ( a.label > b.label ){
+      return 1;
+    }
+    return 0;
+  }
 
   // load options using API call
   const loadOptions = async (inputValue) => {
@@ -100,8 +109,7 @@ const SelectBox = ({ className, id }) => {
             label: response.data[obj].name,
           });
         }
-        console.log(arr.length);
-        return arr;
+        return arr.sort(compare);
       }
     } catch (err) {
       console.log(err);

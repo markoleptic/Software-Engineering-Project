@@ -160,6 +160,32 @@ nav ul li a.icon-link-item:hover {
   padding: 1rem;
   padding-bottom: 1rem;
 }
+.rec-results {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  padding-bottom: 1rem;
+}
+.rec-title-text {
+  text-align: center;
+}
+.table-title-text {
+  color: rgba(62, 198, 235, 1);
+  font-size: 24px;
+  text-align: left;
+}
+.name-text {
+  font-size: 18px;
+}
+.genre-text {
+  font-size: 14px;
+}
+.rating-text {
+  font-size: 18px;
+}
 .rec-container h3 {
   color: rgba(62, 198, 235, 1);
   width: 100%;

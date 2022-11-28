@@ -11,23 +11,28 @@ const handleRecs = async (req, res) => {
       username: username,
     },
   });
-  for (let anime in userAnime) {
-    const foundAnime = await userwatched.findOne({
-      where: {
-        userID: userID.userID,
-        anime_id: userAnime[anime],
-      },
-    });
-    if (foundAnime === null) {
-        userwatched.create({
-        userID: userID.userID,
-        anime_id: userAnime[anime],
+  if (userID !== null) {
+    for (let anime in userAnime) {
+      const foundAnime = await userwatched.findAll({
+        where: {
+          userID: userID.userID,
+          anime_id: userAnime[anime],
+        },
       });
+      console.log(userID, userAnime[anime]);
+      if (foundAnime === null && userAnime[anime] != null) {
+          userwatched.create({
+          userID: userID.userID,
+          anime_id: userAnime[anime],
+        });
+      }
     }
+    const result = await sequelize.query("call loginsystem.getRec(1)");
+    res.json(result);
   }
-  const result = await sequelize.query("call loginsystem.getRec(1)");
-  res.json(result);
-  console.log(result);
+  else {
+    res.status(401).json("Cannot find user");
+  }
 };
 
 module.exports = { handleRecs };

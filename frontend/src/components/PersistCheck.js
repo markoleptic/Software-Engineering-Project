@@ -29,7 +29,7 @@ const PersistCheck = () => {
         }
       };
       // only call for an access token if we reloaded the page and need a new one
-      if (!auth?.accessToken && persist) {
+      if (!auth.accessToken && persist) {
         verifyRefreshToken();
       } else {
         setIsLoading(false);
