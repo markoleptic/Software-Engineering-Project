@@ -23,7 +23,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/recs" element={<Recs />} />
         <Route path="/confirmation/:token" element={<EmailConfirmation />} />
         <Route element={<PersistCheck />}>
           <Route element={<AuthCheck />}>
@@ -31,6 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/recs/*" element={<Recs />} />
           </Route>
         </Route>
         {/* anything that isn't one of the above */}
