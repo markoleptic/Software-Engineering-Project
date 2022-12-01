@@ -13,17 +13,19 @@
 - confirmationController: validates the link that user recieved in email from registerController, and changes the value of "confirmed" variable in the database
 - loginController: finds username and password in database and compares them with user input from frontend. Updates the refreshToken in the databse, returns a cookie to the user with the refreshToken, and returns the username and accessToken to the frontend
 - logoutController: deletes user cookie and refreshToken from database
-- recsController: nothing yet
+- recsController: communicates with database to send anime info to frontend
 - refreshTokenController: returns new accestoken and username
 - registerController: creates confirmation token, creates new user in database, sends email to the user
 
 ### middleware
 - credentials.js: checks that api user is part of allowedOrigins
-- verifyJWT.js: supposed to check that the frontend header request to make sure their access token is valid, not sure if working
+- verifyJWT.js: supposed to check that the frontend header request to make sure their access token is valid
 
 ### models
-- index.js: boilerplate code that initially creates the database, can ignore
+- index.js: boilerplate code that initially creates the database
 - users.js: defines an individual database table (users), and defines all the variables and constraints for variables
+- anime.js: defines an individual database table (anime), and defines all the variables and constraints for variables
+- userwatched.js: defines an individual database table (userwatched), which tracks all of the anime for a given user
 
 ### routes
 - all of the routes are just used to link to the controllers for a certain type of request. All of our requests only have one type of request, so this could've just been collapsed into server.js
@@ -51,9 +53,8 @@
 - Navbar: (no logic) persistant navigation bar
 - PersistCheck: (mostly logic) acts similarly to AuthCheck, but instead checks to see if the user has specified to "trust this device", so that we can automatically request a new accessToken when the user reloads the page after logging in. Without this, the user would have to reenter their login information everytime they refreshed the page or changed websites.
 - Profile (logic and rendering) displays logout button and uses the useLogout hook to log the user out.
-- Recs: nothing yet
+- Recs: Displays selectboxes where user can select and search for anime to add to their recommendation list
 - Register: (logic and rendering) displays a sign up form and handles the logic whether to allow the user to register or not. anthing with "aria" is just used for accessibility
-
 
 #### context
 - AuthContext: used so that the entire application can have access to the variables inside of the "AuthProvider", which are auth and persist. These values are automatically passed down to anything that subscribes to using "useAuthContext"
@@ -61,7 +62,6 @@
 #### hooks
 - React has 15 default hooks, which include useState and useEffect (which we use throughout the app). This folder contains custom hooks. Custom hooks are useful when we have component logic that needs to be used by multiple components. Basically functions that can handle data that is updating throughout the app
 
-- useAxiosPrivate: not currently being used, but interacts with verifyJWT in the backend
 - useLogout: clears the "auth" global variable using useAuthContext, and sends get request to backend
 - useRefreshTokens: updates "auth" global variable with new accessToken
 
