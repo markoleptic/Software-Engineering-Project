@@ -2,7 +2,10 @@ import { useState } from "react";
 import axios from "../api/axios";
 import AsyncSelect from "react-select/async";
 
+/* array containing user selected items from select boxes */
 export const userAnime = [];
+
+/* styling for select boxes */
 export const coloredSelectStyles = () => ({
   menu: (provided) => {
     return {
@@ -59,6 +62,7 @@ export const coloredSelectStyles = () => ({
   }),
 });
 
+/* reusable functional component */
 const SelectBox = ({ className, id }) => {
   // eslint-disable-next-line no-unused-vars
   const [inputValue, setValue] = useState("");
@@ -69,6 +73,7 @@ const SelectBox = ({ className, id }) => {
     setValue(value);
   };
 
+  /* update user selected array on select box change */
   const handleChange = (value) => {
     setSelectedValue(value);
     if (id === 0) {
@@ -84,6 +89,7 @@ const SelectBox = ({ className, id }) => {
     }
   };
 
+  /* alpahbetize select boxes */
   function compare( a, b ) {
     if ( a.label < b.label ){
       return -1;
