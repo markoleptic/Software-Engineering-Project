@@ -1,5 +1,19 @@
 # CS3203_Project
 
+## How to Run
+- Update packages:
+  - Open project (preferably inside VSCode) with both backend and frontend folders visible
+  - Open console by (Control + `) shortcut
+  - change directory to back end (cd backend)
+  - install packages (npm install)
+  - run command "npm run dev" to start the backend server. It may fail if you aren't connected to a database
+  - open new terminal (Control + shift + `)
+  - change directory to front end (cd frontend)
+  - install packages (npm install)
+  - make sure directory is inside frontend, and run command "npm start" to start the front end
+  - window should automatically open to localhost:3000
+  - email markcham@ou.edu if having trouble getting code to run
+
 ## frontend
 
 ### config folder
