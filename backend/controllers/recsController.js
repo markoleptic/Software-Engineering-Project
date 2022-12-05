@@ -1,5 +1,4 @@
-const { userwatched, sequelize } = require("../models");
-const { users } = require("../models");
+const { userwatched, sequelize, users } = require("../models");
 
 const handleRecs = async (req, res) => {
   const username = req.params.username;
@@ -19,18 +18,20 @@ const handleRecs = async (req, res) => {
           anime_id: userAnime[anime],
         },
       });
-      console.log(userID, userAnime[anime]);
-      if (foundAnime === null && userAnime[anime] != null) {
-          userwatched.create({
+      /* if not already in userwatched and select box isn't empty */
+      if (foundAnime.length === 0 && userAnime[anime] != null) {
+        console.log("userID: " + userID.userID + " animeID: " + userAnime[anime]);
+        userwatched.create({
           userID: userID.userID,
           anime_id: userAnime[anime],
         });
       }
     }
-    const result = await sequelize.query("call loginsystem.getRec(1)");
+    const result = await sequelize.query(
+      `call loginsystem.getRec(${userID.userID})`
+    );
     res.json(result);
-  }
-  else {
+  } else {
     res.status(401).json("Cannot find user");
   }
 };
