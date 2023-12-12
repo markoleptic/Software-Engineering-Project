@@ -1,4 +1,4 @@
-# CS3203_Project
+# Software Engineering Project
 
 ## How to Run
 - Update packages:
